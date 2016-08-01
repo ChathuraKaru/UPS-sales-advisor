@@ -1,0 +1,105 @@
+﻿<Window x:Class="rect.Accountant"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Accountant" Height="1035.441" Width="1043.253" FontFamily="Caviar Dreams">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!--Top Navigation Pane-->
+            <Border Grid.Row="0" Background="Gray">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="3" ShadowDepth="3"></DropShadowEffect>
+                </Border.Effect>
+                <Grid Grid.Row="0" Margin="0,0,0,2" Background="#03a9f4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" Background="#03a9f4">
+                    <ToggleButton x:Name="tgbtn"   Width="50" Height="40" Checked="tgbtn_Checked_1" Unchecked="tgbtn_Unchecked_1" >
+                        <ToggleButton.Template>
+                            <ControlTemplate>
+                                <Border HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                    <Image Source="Images/menu.png"
+									Width="50" 
+									Height="40"/>
+                                </Border>
+                            </ControlTemplate>
+                        </ToggleButton.Template>
+                    </ToggleButton>
+                </Grid>
+                <Label Content="Menu" Grid.Column="1" FontSize="20" VerticalAlignment="Center" Foreground="#ffffff"></Label>
+                    <Label x:Name="winName" FontSize="20" Grid.Column="3" Foreground="#ffffff"/>
+                    <Label x:Name="userID" Content="Accountant" FontSize="20" HorizontalAlignment="Right" Grid.Column="5" Foreground="#ffffff"/>
+                <Ellipse Grid.Column="6" Height="40" Width="40" >
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="Images/user.jpg"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Grid>
+            </Border>
+            <!--Bottom window pane-->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <!--Menu pane-->
+                <Grid x:Name="splt" Grid.Column="0"  Background="#283593" Opacity="0.9">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label x:Name="lblPrices" Content="Update Prices" Grid.Row="0" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Width="200"  Margin="0,10,0,0" MouseDown="lblPrices_MouseDown_1">
+                        <Label.Style>
+                            <Style TargetType="{x:Type Label}">
+                                <Setter Property="Foreground" Value="White"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="Black"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                    <Label x:Name="lblReport" Content="View Sales Report" Grid.Row="1" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Width="200"  Margin="0,10,0,0" MouseDown="lblReport_MouseDown_1">
+                        <Label.Style>
+                            <Style TargetType="{x:Type Label}">
+                                <Setter Property="Foreground" Value="White"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="Black"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+
+                </Grid>
+                <!--Switch pane-->
+                <Grid x:Name="SwitchGrid" Grid.Column="1" Background="#b2b6d9">
+                    <Border>
+                        <!--<Border.Effect>
+                            <DropShadowEffect ShadowDepth="1" BlurRadius="10"></DropShadowEffect>
+                        </Border.Effect>-->
+                            <StackPanel x:Name="SwitchPane" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </Border>
+                </Grid>
+
+            </Grid>
+
+
+        </Grid>
+    </Grid>
+</Window>

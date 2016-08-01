@@ -1,0 +1,95 @@
+﻿<Window x:Class="rect.Admin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Admin" Height="809.584" Width="1035.986">
+    <Grid Margin="0,0,-8,-2">
+        <Grid Margin="0,0,10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!--Top Navigation Pane-->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Background="Red">
+                    <ToggleButton x:Name="tgbtn"   Width="50" Height="40" Checked="tgbtn_Checked_1" Unchecked="tgbtn_Unchecked_1" >
+                        <ToggleButton.Template>
+                            <ControlTemplate>
+                                <Border HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                    <Image Source="Images/menu.png"
+									Width="50" 
+									Height="40"/>
+                                </Border>
+                            </ControlTemplate>
+                        </ToggleButton.Template>
+                    </ToggleButton>
+                </Grid>
+                <Label Content="Menu" Grid.Column="1" FontSize="20"></Label>
+                <Label x:Name="winName" FontFamily="Segoe UI" FontSize="20" Grid.Column="3"/>
+                <Label x:Name="userID" Content="Admin" FontSize="20" FontFamily="Segoe UI" HorizontalAlignment="Right" Grid.Column="5"/>
+                <Ellipse Grid.Column="6" Height="40" Width="40" >
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="Images/user.jpg"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Grid>
+            <!--Bottom window pane-->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <!--Menu pane-->
+                <Grid x:Name="splt" Grid.Column="0"  Background="Black">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label x:Name="lblUsers" Content="Manage Users" Grid.Row="0" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Width="200"  Margin="0,10,0,0" MouseDown="lblUsers_MouseDown_1">
+                        <Label.Style>
+                            <Style TargetType="{x:Type Label}">
+                                <Setter Property="Foreground" Value="White"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="Black"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                    <Label x:Name="lblMngUps" Content="Manage Ups Data" Grid.Row="1" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Width="200"  Margin="0,10,0,0" MouseDown="lblMngUps_MouseDown_1">
+                        <Label.Style>
+                            <Style TargetType="{x:Type Label}">
+                                <Setter Property="Foreground" Value="White"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="Black"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+
+                </Grid>
+                <!--Switch pane-->
+                <Grid x:Name="SwitchGrid" Grid.Column="1" Background="Red">
+                    <StackPanel x:Name="SwitchPane" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Background="Gray"/>
+                </Grid>
+
+            </Grid>
+
+
+        </Grid>
+    </Grid>
+</Window>

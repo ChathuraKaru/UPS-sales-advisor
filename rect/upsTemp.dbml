@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="upsData" Class="upsTempDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HP;Initial Catalog=upsData;Integrated Security=True" SettingsObjectName="rect.Properties.Settings" SettingsPropertyName="upsDataConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Line_ups" Member="Line_ups">
+    <Type Name="Line_up">
+      <Column Name="Unit" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Power_Factor" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Load]" Member="Load" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Battery_Cap" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Bat_bckup_Full" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Bat_bckup_Half" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
